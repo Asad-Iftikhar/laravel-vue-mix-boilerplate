@@ -49,4 +49,19 @@ To serve the project, use the Artisan serve command:
 $ php artisan serve
 
 ```
+# Start Vue APP
+To install vue dependencies, use the following command:
+```sh
+$ npm install
+
+```
+
+
+## Run Vue App using Mix
+To serve the vue app, use the below command:
+
+```sh
+$ npm run watch
+
+```
 
