@@ -1,0 +1,70 @@
+# Laravel specific files
+/vendor
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/storage/*.log
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
+
+# Environment files
+.env
+.env.backup
+.env.local
+.env.development
+.env.testing
+.env.production
+
+# IDE specific files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# System specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*.tmp
+
+# Composer and NPM logs and folders
+composer.lock
+npm-debug.log
+yarn-error.log
+.pnp
+.pnp.js
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml
+phpunit.xml.dist
+
+# Coverage reports
+coverage/
+
+# Node.js build
+/build
+
+# Caches and other generated files
+/.phpunit.result.cache
+/.sass-cache
+/.nyc_output
+/.next
+/.nuxt
+/next.config.js
+
+# Ignore files related to deployment
+.env.production
+.php_cs.cache
+/deploy/
+.env.testing
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
