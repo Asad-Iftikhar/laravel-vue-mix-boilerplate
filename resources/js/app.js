@@ -4,9 +4,12 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap.js';
+import 'bootstrap';
 import { createApp } from 'vue';
-
+import router from "./routes.js";
+import ExampleComponent from './components/ExampleComponent.vue';
+import LayoutWrapper from "./layouts/LayoutWrapper.vue";
+import UnauthenticatedLayout from "./layouts/UnauthenticatedLayout.vue";
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -15,8 +18,15 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// Vue JS
+app.use(router);
+
+
+// Layouts
+app.component("LayoutsWrapper", LayoutWrapper);
+app.component("LayoutsUnauthenticated", UnauthenticatedLayout);
+// Here we add authenticated and non authenticated components
+app.component('ExampleComponent', ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
