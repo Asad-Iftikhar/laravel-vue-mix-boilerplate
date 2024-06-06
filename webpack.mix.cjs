@@ -31,6 +31,7 @@ mix
         cleanCss: { level: { 1: { specialComments: "none" } } },
         processCssUrls: false,
     })
+    .copy('resources/sass/theme/bootstrap-icons/fonts', 'public/css/fonts') // copy fonts to public
     .js('resources/js/app.js', 'public/js')
     .sass("resources/sass/app.scss", "public/css")
     .vue({ version: 3 })

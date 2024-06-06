@@ -7,24 +7,37 @@
 import 'bootstrap';
 import { createApp } from 'vue';
 import router from "./routes.js";
+import { store } from './store/index.js'
 import ExampleComponent from './components/ExampleComponent.vue';
 import LayoutWrapper from "./layouts/LayoutWrapper.vue";
 import UnauthenticatedLayout from "./layouts/UnauthenticatedLayout.vue";
+import AuthenticatedLayout from "./layouts/AuthenticatedLayout.vue";
+import HeaderComponent from "./layouts/Header.vue";
+import SidebarComponent from "./layouts/Sidebar.vue";
+import BreadcrumbComponent from "./layouts/Breadcrumb.vue";
+import FooterComponent from "./layouts/Footer.vue";
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
 
+// Create Vue App
 const app = createApp({});
 
-// Vue JS
 app.use(router);
+app.use(store)
 
 
 // Layouts
 app.component("LayoutsWrapper", LayoutWrapper);
 app.component("LayoutsUnauthenticated", UnauthenticatedLayout);
+app.component("LayoutsAuthenticated", AuthenticatedLayout);
+app.component("HeaderSection", HeaderComponent);
+app.component("SidebarSection", SidebarComponent);
+app.component("BreadcrumbSection", BreadcrumbComponent);
+app.component("FooterSection", FooterComponent);
 // Here we add authenticated and non authenticated components
 app.component('ExampleComponent', ExampleComponent);
 
