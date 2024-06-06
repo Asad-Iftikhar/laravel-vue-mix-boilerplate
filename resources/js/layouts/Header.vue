@@ -1,8 +1,14 @@
 <script setup>
-
+import { ref } from 'vue';
 import {store} from "../store";
 
+const isBodyClassActive = ref(false);
 
+const toggleBodyClass = () => {
+  console.log('hello')
+  isBodyClassActive.value = !isBodyClassActive.value;
+  document.body.classList.toggle('toggle-sidebar', isBodyClassActive.value); // Toggle class based on data property
+};
 const logout = () => {
   store.dispatch('authentication/logout');
 }
@@ -17,7 +23,7 @@ const logout = () => {
         <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">NiceAdmin</span>
       </router-link>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <i class="bi bi-list toggle-sidebar-btn" @click="toggleBodyClass"></i>
     </div><!-- End Logo -->
 
     <div class="search-bar">
