@@ -8,7 +8,7 @@ const props = defineProps({
 });
 
 const lastBreadcrumbText = computed(() => {
-  return props.breadcrumbs[props.breadcrumbs.length - 1].text;
+  return props.breadcrumbs[props.breadcrumbs.length - 1]?.text;
 });
 const isLastItem = (index) => index === props.breadcrumbs.length - 1;
 

@@ -1,4 +1,4 @@
-import {userService} from '../../services/index.js';
+import {authService} from '../../services/index.js';
 import router from '../../routes.js';
 import {authUser} from '@/helpers';
 
@@ -14,7 +14,7 @@ export const authentication = {
         login({dispatch, commit}, {email, password}) {
             commit('loginRequest', {email});
 
-            userService.login(email, password)
+            authService.login(email, password)
                 .then(
                     user => {
                         commit('loginSuccess', user);
@@ -27,7 +27,7 @@ export const authentication = {
                 );
         },
         logout({commit}) {
-            userService.logout();
+            authService.logout();
             commit('logout');
             router.push('/login')
         },

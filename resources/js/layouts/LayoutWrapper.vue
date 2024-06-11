@@ -1,17 +1,12 @@
-<script>
+<script setup>
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute();
 
 const layout = computed(() => {
-  return `layouts-${this.$route.meta.layout || "unauthenticated"}`;
+  return `layouts-${route.meta.layout || "authenticated"}`;
 })
-export default {
-  computed: {
-    layout() {
-      return `layouts-${this.$route.meta.layout || "unauthenticated"}`;
-    },
-  },
-};
 </script>
 <template>
   <component :is="layout" />

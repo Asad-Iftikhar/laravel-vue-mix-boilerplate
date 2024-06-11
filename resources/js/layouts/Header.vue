@@ -5,7 +5,6 @@ import {store} from "../store";
 const isBodyClassActive = ref(false);
 
 const toggleBodyClass = () => {
-  console.log('hello')
   isBodyClassActive.value = !isBodyClassActive.value;
   document.body.classList.toggle('toggle-sidebar', isBodyClassActive.value); // Toggle class based on data property
 };

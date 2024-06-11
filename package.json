@@ -21,6 +21,9 @@
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
+        "datatables.net": "^2.0.8",
+        "datatables.net-bs5": "^2.0.8",
+        "datatables.net-vue3": "^3.0.1",
         "vue-router": "^4.3.2",
         "vuex": "^4.1.0"
     }

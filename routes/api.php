@@ -3,9 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+//Route::get('/user', function (Request $request) {
+//    return $request->user();
+//})->middleware('auth:sanctum');
 
 
 Route::group(['prefix' => 'auth'], function () {
@@ -16,4 +16,8 @@ Route::group(['prefix' => 'auth'], function () {
 // Authenticated Routes
 Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function () {
     Route::post('/checkLoggedIn', [\App\Http\Controllers\Api\Auth\AuthController::class, 'adminCheckLoggedIn']);
+});
+
+Route::group(['prefix' => 'users', 'middleware' => ['auth']], function () {
+    Route::get('/', [\App\Http\Controllers\Api\User\UsersController::class, 'index']);
 });
